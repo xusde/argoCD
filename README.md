@@ -1,3 +1,21 @@
+# Complete CI/CD DevOps Project 🚀
+### Deploy Python Flask App on Kubernetes cluster with GitOps Approach. 
+
+![alt text](imgs/arch.png)
+
+---
+#### What you will learn:
+- Git for version control
+- VS Code Editor
+- Docker for testing locally
+- Minikube for Kubernetes 1 Node Arch. 
+- GitHub for storing code
+- GitHub Actions for Continous Integrity Pipeline 
+- ArgoCD for Continous Deployment Pipeline
+- Python Application
+    - Flask Framework
+    - Flake8 Module for Linting testing  
+
 ## Setup ArgoCD in Minikube
 
 Note: You can setup Argo CD in any cluster, instructions are same. 
