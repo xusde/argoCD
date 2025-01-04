@@ -66,7 +66,40 @@ Note: This application is running on 5000 port, but if you want to change, you c
 Before creating pipeline, test locally if your dockerfile is accurate by running container. 
 We will create Dockerfile. If you don't know what is docker, please read some basic understanding about docker: https://github.com/infosecsingh/Learn-Docker
 
+Write Dockerfile
+```
+# Step 1: Base image
+FROM python:3.9-slim
 
+# Step 2: Set working directory
+WORKDIR /app
+
+# Step 3: Copy application code to the container
+COPY . .
+
+# Step 4: Install dependencies
+RUN pip install -r requirements.txt
+
+# Step 5: Expose the application port
+EXPOSE 5000
+
+# Step 6: Define the command to run the application
+CMD ["python", "app.py"]
+```
+### Lets Run Build command.
+1. Build the Image: Run the following in the directory containing your Dockerfile:
+```
+docker build -t 1nfosecsingh/demo-app:v1 .
+```
+Note: you need to change the name of your image, according to your dockerhub username.
+
+2. Lets create container with image.
+ ```
+ docker run -d -p 5000:5000 --name=demo-app demo-app
+ ```
+
+ If everything is working fine and you are able to access application with https://localhost:5000 then next step is to write a GitHub Pipeline.
+ 
 
 ## Setup ArgoCD in Minikube
 
