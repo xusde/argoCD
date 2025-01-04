@@ -5,7 +5,7 @@
 
 ---
 ### Workflow:
-Whenever Developer writing/changes a code and push into master/main branch, GitHub Pipeline will triggered and it will test the code with Flake8 and the containerized the application with new tag and push into artifacts(dockerhub) and also GitHub Actions pipeline will update Kubernetes Manifests file with new image tag then ArgoCD will look for new changes in Manifests file and will rollout new application in kubernetes. 
+Whenever Developer writing/changes a code and push into master/main branch, GitHub Pipeline will triggered and it will test the code with Flake8 and containerized the application with new tag and push into artifacts(dockerhub) and also GitHub Actions pipeline will update Kubernetes Manifests file with new image tag then ArgoCD will look for new changes in Manifests file and will rollout new application in kubernetes. 
 ```
 │   app.py
 │   LICENSE
@@ -46,6 +46,10 @@ Whenever we are creating pipeline, it is best practice to test application local
     git clone https://github.com/infosecsingh/Flask-App-GitHub-Actions-ArgoCD.git
     cd Flask-App-GitHub-Actions-ArgoCD
     ```
+- Install Dependence
+    ```
+    pip install -r requirements.txt
+    ```
 - Run locally. 
     ```
     python app.py
@@ -59,8 +63,8 @@ Note: This application is running on 5000 port, but if you want to change, you c
 
 ---
 ## Containerized Application.
-Before creating pipeline, test locally if your dockerfile is accurate by running container locally. 
-We will create Dockerfile. If you don't know what docker, please read some basic understanding about docker: https://github.com/infosecsingh/Learn-Docker
+Before creating pipeline, test locally if your dockerfile is accurate by running container. 
+We will create Dockerfile. If you don't know what is docker, please read some basic understanding about docker: https://github.com/infosecsingh/Learn-Docker
 
 
 
