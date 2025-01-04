@@ -4,6 +4,25 @@
 ![alt text](imgs/arch.png)
 
 ---
+### Workflow:
+Whenever Developer writing/changes a code and push into master/main branch, GitHub Pipeline will triggered and it will test the code with Flake8 and the containerized the application with new tag and push into artifacts(dockerhub) and also GitHub Actions pipeline will update Kubernetes Manifests file with new image tag then ArgoCD will look for new changes in Manifests file and will rollout new application in kubernetes. 
+```
+│   app.py
+│   LICENSE
+│   README.md
+│   requirements.txt
+│
+├───deploy
+│       deploy.yaml
+│       svc.yaml
+│
+├───static
+│       style.css
+│
+└───templates
+        index.html
+```
+---
 #### What you will learn:
 - Git for version control
 - VS Code Editor
@@ -15,6 +34,35 @@
 - Python Application
     - Flask Framework
     - Flake8 Module for Linting testing  
+---
+## Test Application Locally. 
+Whenever we are creating pipeline, it is best practice to test application locally.
+- Application prequisities. 
+  - Python 3.9 
+  - pip installed
+
+- Clone/Fork the Repo. 
+    ```
+    git clone https://github.com/infosecsingh/Flask-App-GitHub-Actions-ArgoCD.git
+    cd Flask-App-GitHub-Actions-ArgoCD
+    ```
+- Run locally. 
+    ```
+    python app.py
+    ```
+- Access the application.
+    ```
+    http://localhost:5000
+    ```
+
+Note: This application is running on 5000 port, but if you want to change, you can change the port in app.py script.
+
+---
+## Containerized Application.
+Before creating pipeline, test locally if your dockerfile is accurate by running container locally. 
+We will create Dockerfile. If you don't know what docker, please read some basic understanding about docker: https://github.com/infosecsingh/Learn-Docker
+
+
 
 ## Setup ArgoCD in Minikube
 
