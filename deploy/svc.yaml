@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: weather-check-service
+  name: demo-app-service
 spec:
   selector:
-    app: weather-check
+    app: demo-app
   ports:
     - protocol: TCP
       port: 5000

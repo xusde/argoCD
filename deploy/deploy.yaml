@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: weather-check-deployment
+  name: demo-app-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: weather-check
+      app: demo-app
   template:
     metadata:
       labels:
-        app: weather-check
+        app: demo-app
     spec:
       containers:
       - name: weather-check
-        image: 1nfosecsingh/weather-check-app:v20241227065738
+        image: 1nfosecsingh/demo-app:tagname
         ports:
         - containerPort: 5000
